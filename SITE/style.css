@@ -1,0 +1,43 @@
+body {
+margin: 0;
+height: 100vh;
+background-image: url(imges/maxloor.jpeg);
+background-position: center;
+background-size: cover;
+background: no-repeat;
+background: url(imges/maxloor.jpeg) center / cover no-repeat;
+
+}
+header {
+     /* background-color: blueviolet; */
+     height: 50px;
+     padding: 0 100px 0;
+}
+main {
+/* background-color: aqua; */
+height: calc(70% - 50px);
+padding: 30% 100px 0;
+}
+nav {
+/* background-color: lightseagreen; */
+height: 100%;
+width: 200px;
+position: fixed;
+top: 0;
+right: 0;
+background-color: rgba(200, 200, 200, .2);
+backdrop-filter: blur(7px)
+
+
+}
+a {
+color: white;
+line-height: 50px;
+text-decoration: none;
+}
+h1{
+
+color: white;
+font: 50px sans-serif;
+;
+}
