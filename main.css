@@ -4,10 +4,14 @@ body {
     margin: 0;
   }
 header {
+  position: sticky;
+  top: 0;
+  background-color: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px;
+    z-index: 1  ;
   }
   .header__logo {
     height: 30px;
@@ -90,6 +94,8 @@ button {
     padding-top: 115px; 
     padding-bottom: 115px;
     text-align: center;
+    display: flex; 
+    justify-content: center; 
   }
 
   .form h1 {
@@ -99,21 +105,24 @@ button {
       font-size: 18px;
       opacity: 0.65;
       }
-.form {
-        display: flex; 
-        justify-content: center; 
-        align-items: center;
-      }
 
 .form__group {
   display: flex;
   flex-direction: column;
   text-align: left;
 }
+
+.form form {
+  
+    margin-top: 60px;
+    display: grid;
+    grid-gap: 20px;
+ }
+
 .form label {
   font-size: 18px;
   font-weight: 600;
-  text-align: left;
+  margin-bottom: 20px;
 }
 
 .form input
@@ -133,26 +142,18 @@ button {
   display: grid;
   margin-bottom: 15px;
 }
-  .form input{
-    font-size: 18;
+  .form input, .form select { 
+    border: none;
+    font-size: 18px;
     color: #213053;
     height: 60px;
-    padding: 0 20px 0 20px;
+    padding: 0 20px;
+    outline: none;
     border-radius:15px;
-    border: none;
   }
-
-  .form select{
-    font-size: 18;
-    color: #213053;
-    height: 60px;
-    padding: 0 20px 0 20px;
-    border-radius:15px;
-    border: none;
-  }
-
+  
 .form__submit{
-  font-size: 18;
+  font-size: 18px;
   font-weight: 600;
   margin-top: 40px;
 }
@@ -162,46 +163,140 @@ select{
 input{
   outline: none;
 }
-button:hover{
+button:hover {
   color: #ef7b18;
   background-color: #f6980c;
-  box-shadow: 0 16px 36px rgba(246 152 12 / 20%).
+  box-shadow: 0 16px 36px rgba(246 152 12 / 20%);
+  transition: background-color 0.3s ease-in;
 }
   .ease{
     transition: margin-right 0.3s ease;
   }
 
-  .container{
-    padding: 90px 0 20px 0;
-    font-size: 16;
-    font-weight:600;
-    display: flex;
-    text-align: center;
-  }
+  footer {
+    padding: 90px 20px;
+    font-size: 16px;  
+    font-weight: 600;
+ }
 
-.copyright{
+ .footer__container {
+  display: flex;
+  justify-content: center;
+ }
+
+.footer__copyright {
     text-align: center;
-    display: flex;
-    padding: 40px 0 0 0;
     opacity: 0.5;
-  /* } сдесь что-то не так, не реагирует! */
+    margin-top: 40px;
+ }
+
 
 .footer__group{
-  padding: 0 80px 0 0;
+  margin-right: 80px;
 }
 
-h1 {
+footer h3 {
 font-size: 16px;
 opacity: 0.7;
 margin-bottom: 30px;
 }
 
-.footer__links{
+.footer__links {
   display: flex;
-  flex-direction: column
+  flex-direction: column;
 }
 
-a {
-  margin-top: 15px;
-  /* что-то пошло снова не так подвал корявый вышел */
+.footer__links a {
+  margin-bottom: 15px;
+}
+
+@keyframes rotation {
+  0%{
+    transform: rotate(0deg);
+  }
+
+  100%{
+    transform: rotate(360deg);
+  }
+}
+
+.about__sun-image {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  animation-name: rotation;
+  animation-duration: 10s;
+animation-iteration-count: infinite;
+animation-timing-function: linear;
+
+}
+
+@media (max-width: 1024px) {
+  .about {
+      padding: 115px 20px;
+  }
+
+  .about h1 {
+      font-size: 36px;
+      line-height: 40px;
+  }
+
+  .about__image {
+      width: 280px;
+  }
+
+  .about__sun-image {
+      width: 75px;
+      height: 75px;
+  }
+}
+
+/* Мобильные устройства */
+@media (max-width: 720px) {
+  header {
+      padding: 10px;
+  }
+
+  .header__logo {
+      height: 20px;
+  }
+
+  header a {
+      margin-right: 10px;
+  }
+
+  .about {
+      flex-direction: column-reverse;
+      padding: 50px 10px;
+  }
+
+  .about h1 {
+      font-size: 36px;
+      line-height: 40px;
+  }
+
+  .about__image {
+      width: 280px;
+  }
+
+  .about__sun-image {
+      width: 75px;
+      height: 75px;
+  }
+
+  .form {
+      padding: 50px 10px;
+  }
+
+  .form h1 {
+      font-size: 36px;
+  }
+
+  footer {
+      padding: 50px 10px;
+  }
+
+  .footer__container {
+      flex-direction: column;
+  }
 }
